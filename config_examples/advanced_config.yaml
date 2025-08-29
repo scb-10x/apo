@@ -1,0 +1,60 @@
+# Advanced Prompt Optimization Configuration
+# Use this configuration for comprehensive optimization with all advanced features
+
+# Required settings
+task: "both"  # Optimize for both task1 and task2
+data_path: "data/combined_dataset.json"
+output_path: "results/advanced_optimization"
+
+# Prompt configuration
+prompt_types:
+  - "function"
+  - "dialogue"
+initial_function_prompt: null  # Will use agent defaults
+initial_dialogue_prompt: null
+
+# Optimization parameters
+score_threshold: 0.85  # Higher threshold for thorough optimization
+max_iterations: 15
+min_improvement_threshold: 0.01
+sample_size: null  # Use all available data
+
+# Model configuration - using more capable models
+gradient_model: "gpt-4o-mini"
+gradient_temperature: 0.7
+editor_model: "gpt-4o-mini"
+editor_temperature: 0.3
+evaluator_model: "gpt-4o-mini"
+evaluator_temperature: 0.1
+
+# Advanced parameters
+batch_size: 8
+max_gradient_samples: 25
+prompt_edit_strategy: "incremental"
+
+# Advanced optimization features - ALL ENABLED
+enable_gradient_mini_batch: true
+gradient_mini_batch_size: 12  # Use subset for faster gradient generation
+
+enable_prompt_candidates: true
+num_prompt_candidates: 3  # Generate 3 variants per iteration
+monte_carlo_sample_size: 15  # Larger sample for better candidate selection
+
+enable_beam_search: false  # Disabled to avoid excessive computation with candidates
+beam_width: 3
+
+enable_gradient_memory: true
+gradient_memory_size: 5  # Remember last 5 iterations
+
+# Performance optimization
+n_parallel: 16  # Parallel evaluation requests
+
+# Checkpoint configuration
+enable_checkpointing: true
+checkpoint_dir: "checkpoints/advanced"
+checkpoint_interval: 1  # Save every iteration due to computational cost
+
+# Wandb configuration (enabled for tracking)
+enable_wandb: true
+wandb_project: "prompt-optimization-advanced"
+wandb_run_name: "advanced_features_run" 

@@ -1,0 +1,60 @@
+# Beam Search Optimization Configuration
+# Optimized for thorough exploration using beam search
+
+# Required settings
+task: "both"
+data_path: "data/research_dataset.json"
+output_path: "results/beam_search_optimization"
+
+# Prompt configuration
+prompt_types:
+  - "function"
+  - "dialogue"
+initial_function_prompt: null
+initial_dialogue_prompt: null
+
+# Optimization parameters
+score_threshold: 0.9  # Very high threshold for research purposes
+max_iterations: 20
+min_improvement_threshold: 0.005  # Smaller threshold for fine-tuning
+sample_size: null
+
+# Model configuration
+gradient_model: "gpt-4o-mini"
+gradient_temperature: 0.7
+editor_model: "gpt-4o-mini"
+editor_temperature: 0.3
+evaluator_model: "gpt-4o-mini"
+evaluator_temperature: 0.1
+
+# Advanced parameters
+batch_size: 6
+max_gradient_samples: 20
+prompt_edit_strategy: "incremental"
+
+# Beam search focused configuration
+enable_gradient_mini_batch: true
+gradient_mini_batch_size: 8  # Smaller batches for cost control
+
+enable_prompt_candidates: false  # Disabled to avoid exponential complexity
+num_prompt_candidates: 3
+monte_carlo_sample_size: 10
+
+enable_beam_search: true  # Main feature
+beam_width: 4  # Maintain 4 candidates
+
+enable_gradient_memory: true
+gradient_memory_size: 7  # Longer memory for research
+
+# Performance optimization
+n_parallel: 16
+
+# Checkpoint configuration
+enable_checkpointing: true
+checkpoint_dir: "checkpoints/beam_search"
+checkpoint_interval: 2  # Save every 2 iterations
+
+# Wandb configuration
+enable_wandb: true
+wandb_project: "prompt-optimization-beam-search"
+wandb_run_name: "beam_search_w4_research" 

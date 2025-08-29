@@ -1,0 +1,56 @@
+# Basic Prompt Optimization Configuration
+# Use this configuration for simple optimization tasks
+
+# Required settings
+task: "task1"
+data_path: "data/task1_sample.json"
+output_path: "results/basic_optimization"
+
+# Prompt configuration
+prompt_types:
+  - "function"
+initial_function_prompt: null
+initial_dialogue_prompt: null
+
+# Basic optimization parameters
+score_threshold: 0.8
+max_iterations: 10
+min_improvement_threshold: 0.01
+sample_size: null  # Use all available data
+
+# Model configuration
+gradient_model: "gpt-4.1-nano"
+gradient_temperature: 0.7
+editor_model: "gpt-4.1-nano"
+editor_temperature: 0.3
+evaluator_model: "gpt-4.1-nano"
+evaluator_temperature: 0.1
+
+# Basic parameters
+batch_size: 5
+max_gradient_samples: 20
+prompt_edit_strategy: "incremental"
+
+# Advanced features (all disabled for basic config)
+enable_gradient_mini_batch: false
+gradient_mini_batch_size: 10
+enable_prompt_candidates: false
+num_prompt_candidates: 3
+monte_carlo_sample_size: 10
+enable_beam_search: false
+beam_width: 3
+enable_gradient_memory: false
+gradient_memory_size: 5
+
+# Performance optimization
+n_parallel: 16
+
+# Checkpoint configuration
+enable_checkpointing: true
+checkpoint_dir: "checkpoints"
+checkpoint_interval: 1
+
+# Wandb configuration (disabled)
+enable_wandb: false
+wandb_project: null
+wandb_run_name: null 

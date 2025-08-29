@@ -1,0 +1,48 @@
+task: "task1"  # Optimize for both task1 and task2
+data_path: "data/task1_train.json"
+output_path: "results/function_calling"
+
+# Prompt configuration
+prompt_types:
+  - "function"
+initial_function_prompt: null
+initial_dialogue_prompt: null
+
+score_threshold: 0.95
+max_iterations: 30
+min_improvement_threshold: 0.01
+sample_size: null
+
+gradient_model: "gpt-4.1-mini"
+gradient_temperature: 0.7
+editor_model: "gpt-4.1"
+editor_temperature: 0.3
+evaluator_model: "gpt-4.1-mini"
+evaluator_temperature: 0.0
+
+batch_size: 16
+max_gradient_samples: null
+prompt_edit_strategy: "replacement"
+
+enable_gradient_mini_batch: true
+gradient_mini_batch_size: 16
+
+enable_prompt_candidates: true
+num_prompt_candidates: 3
+monte_carlo_sample_size: 16
+
+enable_beam_search: true
+beam_width: 3
+
+enable_gradient_memory: true
+gradient_memory_size: 8
+
+n_parallel: 16
+
+enable_checkpointing: true
+checkpoint_dir: "checkpoints/advanced"
+checkpoint_interval: 1
+
+enable_wandb: false
+wandb_project: null
+wandb_run_name: null
