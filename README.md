@@ -217,6 +217,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## 🙏 Acknowledgments
 
 - **[Commonsense Persona-grounded Dialogue Challenge 2025](https://www.aicrowd.com/challenges/commonsense-persona-grounded-dialogue-challenge-2025)**: For organizing this shared task at EMNLP 2025 and providing the starter pack and dataset
+- **[Microsoft LMOps](https://github.com/microsoft/LMOps/tree/main/prompt_optimization)**: For the original Prompt Optimization with Textual Gradients (ProTeGi) implementation that inspired some of our optimization approaches
 
 ---
 
